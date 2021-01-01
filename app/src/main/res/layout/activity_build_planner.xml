@@ -61,6 +61,7 @@
 
                     <EditText
                         android:id="@+id/buildVigor"
+                        android:nextFocusDown="@id/buildAttunement"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="45dp"
@@ -76,6 +77,7 @@
 
                     <EditText
                         android:id="@+id/buildAttunement"
+                        android:nextFocusDown="@id/buildEndurance"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="45dp"
@@ -91,6 +93,7 @@
 
                     <EditText
                         android:id="@+id/buildEndurance"
+                        android:nextFocusDown="@id/buildVitality"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="45dp"
@@ -114,6 +117,7 @@
 
                     <EditText
                         android:id="@+id/buildVitality"
+                        android:nextFocusDown="@id/buildStrength"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="45dp"
@@ -129,6 +133,7 @@
 
                     <EditText
                         android:id="@+id/buildStrength"
+                        android:nextFocusDown="@id/buildDexterity"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="45dp"
@@ -144,6 +149,7 @@
 
                     <EditText
                         android:id="@+id/buildDexterity"
+                        android:nextFocusDown="@id/buildIntelligence"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="45dp"
@@ -167,6 +173,7 @@
 
                     <EditText
                         android:id="@+id/buildIntelligence"
+                        android:nextFocusDown="@id/buildFaith"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="45dp"
@@ -182,6 +189,7 @@
 
                     <EditText
                         android:id="@+id/buildFaith"
+                        android:nextFocusDown="@id/buildLuck"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="45dp"
