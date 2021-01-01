@@ -7,17 +7,20 @@ import org.jetbrains.anko.info
 import kotlinx.android.synthetic.main.activity_build_planner.*
 import org.jetbrains.anko.toast
 import org.wit.soulsbuildplanner.R
+import org.wit.soulsbuildplanner.main.MainApp
 import org.wit.soulsbuildplanner.models.BuildModel
 
 class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
 
     var build = BuildModel()
-    val builds = ArrayList<BuildModel>()
+    //val builds = ArrayList<BuildModel>()
+    lateinit var app: MainApp
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_build_planner)
-        info("Build Planner Activity Started...")
+        app = application as MainApp
 
         btnAdd.setOnClickListener(){
             build.title = buildTitle.text.toString()
@@ -35,10 +38,10 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
             build.totalSouls = totalSouls(build.level)
 
             if(build.title.isNotEmpty()) {
-                builds.add(build.copy())
+                app.builds.add(build.copy())
                 info { "Add Button Pressed: ${build}" }
-                for(i in builds.indices){
-                    info("Build[$i]:${this.builds[i]}")
+                for(i in app.builds.indices){
+                    info("Build[$i]:${app.builds[i]}")
                 }
             }
             else{

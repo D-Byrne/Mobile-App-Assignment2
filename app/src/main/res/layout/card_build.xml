@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:elevation="24dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/buildTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/buildTitle">
+
+        <LinearLayout
+            android:id="@+id/linLayFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/vigor"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal" />
+           <!-- android:layout_below="@id/buildTitle" -->
+
+        <TextView
+            android:id="@+id/attunement"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+           <!-- android:layout_below="@id/vigor" -->
+
+        <TextView
+            android:id="@+id/endurance"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+           <!-- android:layout_below="@id/attunement" -->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linLaySec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/vitality"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+           <!-- android:layout_below="@id/endurance" -->
+        <TextView
+            android:id="@+id/strength"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+           <!-- android:layout_below="@id/vitality" -->
+
+        <TextView
+            android:id="@+id/dexterity"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+            <!-- android:layout_below="@id/strength" -->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linLayThird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/intelligence"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+          <!-- android:layout_below="@id/dexterity" -->
+
+        <TextView
+            android:id="@+id/faith"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+           <!-- android:layout_below="@id/intelligence" -->
+
+        <TextView
+            android:id="@+id/luck"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+          <!--  android:layout_below="@id/faith" -->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+           <!-- android:layout_below="@id/luck" -->
+
+        <TextView
+            android:id="@+id/nextLevel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+           <!-- android:layout_below="@id/level" -->
+
+        <TextView
+            android:id="@+id/totalSouls"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"/>
+          <!--  android:layout_below="@id/nextLevel" -->
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
