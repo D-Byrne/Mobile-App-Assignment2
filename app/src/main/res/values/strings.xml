@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SoulsBuildPlanner</string>
+    <string name="hint_buildTitle">Build Title</string>
+    <string name="button_addBuild">Add Build</string>
 </resources>
