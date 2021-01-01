@@ -2,4 +2,13 @@
     <string name="app_name">SoulsBuildPlanner</string>
     <string name="hint_buildTitle">Build Title</string>
     <string name="button_addBuild">Add Build</string>
+    <string name="hint_buildVigor">Vigor</string>
+    <string name="hint_buildAttunement">Attunement</string>
+    <string name="hint_buildEndurance">Endurance</string>
+    <string name="hint_buildVitality">Vitality</string>
+    <string name="hint_buildStrength">Strength</string>
+    <string name="hint_buildDexterity">Dexterity</string>
+    <string name="hint_buildIntelligence">Intelligence</string>
+    <string name="hint_buildFaith">Faith</string>
+    <string name="hint_buildLuck">Luck</string>
 </resources>

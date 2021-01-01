@@ -53,6 +53,165 @@
                     android:textColor="@color/lightGrey"
                     android:textSize="14sp" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+
+                    <EditText
+                        android:id="@+id/buildVigor"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="45dp"
+                        android:layout_margin="8dp"
+                        android:autofillHints=""
+                        android:hint="@string/hint_buildVigor"
+                        android:inputType="numberDecimal"
+                        android:maxLength="25"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/buildAttunement"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="45dp"
+                        android:layout_margin="8dp"
+                        android:autofillHints=""
+                        android:hint="@string/hint_buildAttunement"
+                        android:inputType="numberDecimal"
+                        android:maxLength="25"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/buildEndurance"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="45dp"
+                        android:layout_margin="8dp"
+                        android:autofillHints=""
+                        android:hint="@string/hint_buildEndurance"
+                        android:inputType="numberDecimal"
+                        android:maxLength="25"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+
+                    <EditText
+                        android:id="@+id/buildVitality"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="45dp"
+                        android:layout_margin="8dp"
+                        android:autofillHints=""
+                        android:hint="@string/hint_buildVitality"
+                        android:inputType="numberDecimal"
+                        android:maxLength="25"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/buildStrength"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="45dp"
+                        android:layout_margin="8dp"
+                        android:autofillHints=""
+                        android:hint="@string/hint_buildStrength"
+                        android:inputType="numberDecimal"
+                        android:maxLength="25"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/buildDexterity"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="45dp"
+                        android:layout_margin="8dp"
+                        android:autofillHints=""
+                        android:hint="@string/hint_buildDexterity"
+                        android:inputType="numberDecimal"
+                        android:maxLength="25"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+
+                    <EditText
+                        android:id="@+id/buildIntelligence"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="45dp"
+                        android:layout_margin="8dp"
+                        android:autofillHints=""
+                        android:hint="@string/hint_buildIntelligence"
+                        android:inputType="numberDecimal"
+                        android:maxLength="25"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/buildFaith"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="45dp"
+                        android:layout_margin="8dp"
+                        android:autofillHints=""
+                        android:hint="@string/hint_buildFaith"
+                        android:inputType="numberDecimal"
+                        android:maxLength="25"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/buildLuck"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="45dp"
+                        android:layout_margin="8dp"
+                        android:autofillHints=""
+                        android:hint="@string/hint_buildLuck"
+                        android:inputType="numberDecimal"
+                        android:maxLength="25"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
                 <Button
                     android:id="@+id/btnAdd"
                     android:layout_width="match_parent"
