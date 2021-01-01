@@ -11,4 +11,5 @@
     <string name="hint_buildIntelligence">Intelligence</string>
     <string name="hint_buildFaith">Faith</string>
     <string name="hint_buildLuck">Luck</string>
+    <string name="menu_addBuild">Add</string>
 </resources>

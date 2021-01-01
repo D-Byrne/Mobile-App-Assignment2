@@ -14,9 +14,9 @@ class MainApp: Application(), AnkoLogger {
         super.onCreate()
         info("Souls Build Planner Started")
 
-        builds.add(BuildModel("Quality", 20, 15, 35, 40, 40, 35, 7, 7, 7, 213, 111111111, 22222222))
-        builds.add(BuildModel("Strength", 20, 15, 35, 40, 40, 35, 7, 7, 7, 213, 111111111, 22222222))
-        builds.add(BuildModel("Dexterity", 20, 15, 35, 40, 40, 35, 7, 7, 7, 213, 111111111, 22222222))
+       // builds.add(BuildModel("Quality", 20, 15, 35, 40, 40, 35, 7, 7, 7, 213, 111111111, 22222222))
+       // builds.add(BuildModel("Strength", 20, 15, 35, 40, 40, 35, 7, 7, 7, 213, 111111111, 22222222))
+       // builds.add(BuildModel("Dexterity", 20, 15, 35, 40, 40, 35, 7, 7, 7, 213, 111111111, 22222222))
 
     }
 }

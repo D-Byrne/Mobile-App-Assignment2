@@ -43,6 +43,8 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
                 for(i in app.builds.indices){
                     info("Build[$i]:${app.builds[i]}")
                 }
+                setResult(AppCompatActivity.RESULT_OK)
+                finish()
             }
             else{
                 toast("Please Enter a Title")

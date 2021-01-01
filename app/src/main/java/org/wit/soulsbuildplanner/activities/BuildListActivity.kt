@@ -1,14 +1,13 @@
 package org.wit.soulsbuildplanner.activities
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_build_list.*
 import kotlinx.android.synthetic.main.card_build.view.*
+import org.jetbrains.anko.startActivityForResult
 import org.wit.soulsbuildplanner.R
 import org.wit.soulsbuildplanner.main.MainApp
 import org.wit.soulsbuildplanner.models.BuildModel
@@ -22,10 +21,25 @@ class BuildListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_build_list)
         app = application as MainApp
 
+        toolbar.title = title
+        setSupportActionBar(toolbar)
+
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = BuildAdapter(app.builds)
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.item_add -> startActivityForResult<BuildPlannerActivity>(0)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
