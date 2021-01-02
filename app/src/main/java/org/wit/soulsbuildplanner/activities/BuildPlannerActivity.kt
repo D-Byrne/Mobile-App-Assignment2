@@ -27,7 +27,10 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
 
         app = application as MainApp
 
+        var edit = false
+
         if(intent.hasExtra("build_edit")) {
+            edit = true
             build = intent.extras?.getParcelable<BuildModel>("build_edit")!!
             buildTitle.setText(build.title)
             buildVigor.setText(build.vigor.toString())
@@ -39,6 +42,8 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
             buildIntelligence.setText(build.intelligence.toString())
             buildFaith.setText(build.faith.toString())
             buildLuck.setText(build.luck.toString())
+
+            btnAdd.setText(R.string.save_build)
         }
 
         btnAdd.setOnClickListener(){
@@ -56,15 +61,18 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
             build.nextLevel = calcNextLevel(build.level)
             build.totalSouls = totalSouls(build.level)
 
-            if(build.title.isNotEmpty()) {
-                app.builds.create(build.copy())
-                info { "Add Button Pressed: ${build}" }
-                setResult(AppCompatActivity.RESULT_OK)
-                finish()
+            if(build.title.isEmpty()){
+                toast(R.string.enter_build_title)
+            } else {
+                if(edit){
+                    app.builds.update(build.copy())
+                } else{
+                    app.builds.create(build.copy())
+                }
             }
-            else{
-                toast("Please Enter a Title")
-            }
+            info("Add Button Pressed: $buildTitle")
+            setResult(AppCompatActivity.RESULT_OK)
+            finish()
         }
 
 

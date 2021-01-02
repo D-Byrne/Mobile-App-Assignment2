@@ -13,4 +13,6 @@
     <string name="hint_buildLuck">Luck</string>
     <string name="menu_addBuild">Add</string>
     <string name="menu_cancelPlacemark">Cancel</string>
+    <string name="enter_build_title">Please enter a Build title</string>
+    <string name="save_build">Save Build</string>
 </resources>

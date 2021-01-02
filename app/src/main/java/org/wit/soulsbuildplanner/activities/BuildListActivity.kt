@@ -1,5 +1,6 @@
 package org.wit.soulsbuildplanner.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,11 @@ class BuildListActivity : AppCompatActivity(), BuildListener {
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = BuildAdapter(app.builds.findAll(), this)
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        recyclerView.adapter?.notifyDataSetChanged()
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

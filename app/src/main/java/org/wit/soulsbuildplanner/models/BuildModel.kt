@@ -4,7 +4,8 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class BuildModel(var title: String = "",
+data class BuildModel(var id: Long = 0,
+                      var title: String = "",
                       var vigor: Int = 0,
                       var attunement: Int = 0,
                       var endurance: Int = 0,
