@@ -12,4 +12,5 @@
     <string name="hint_buildFaith">Faith</string>
     <string name="hint_buildLuck">Luck</string>
     <string name="menu_addBuild">Add</string>
+    <string name="menu_cancelPlacemark">Cancel</string>
 </resources>

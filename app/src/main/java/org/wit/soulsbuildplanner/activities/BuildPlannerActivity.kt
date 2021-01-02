@@ -2,6 +2,8 @@ package org.wit.soulsbuildplanner.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import kotlinx.android.synthetic.main.activity_build_planner.*
@@ -20,6 +22,9 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_build_planner)
+        toolbarAdd.title = title
+        setSupportActionBar(toolbarAdd)
+
         app = application as MainApp
 
         btnAdd.setOnClickListener(){
@@ -52,6 +57,20 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
         }
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean{
+       menuInflater.inflate(R.menu.menu_build_planner, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean{
+        when(item.itemId) {
+            R.id.item_cancel -> {
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     fun calcNextLevel(lvl: Int): Int {
