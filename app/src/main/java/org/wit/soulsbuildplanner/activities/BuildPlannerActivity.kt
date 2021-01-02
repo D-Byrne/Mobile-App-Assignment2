@@ -53,6 +53,9 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
 
             btnAdd.setText(R.string.save_build)
             buildImage.setImageBitmap(readImageFromPath(this, build.image))
+            if(build.image != null){
+                chooseImage.setText(R.string.change_build_image)
+            }
         }
 
         btnAdd.setOnClickListener(){
@@ -98,6 +101,7 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
                 if(data != null){
                     build.image = data.getData().toString()
                     buildImage.setImageBitmap(readImage(this, resultCode, data))
+                    chooseImage.setText(R.string.change_build_image)
                 }
             }
         }

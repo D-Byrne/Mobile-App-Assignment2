@@ -17,4 +17,8 @@
     <string name="save_build">Save Build</string>
     <string name="button_addImage">Add Image</string>
     <string name="select_build_image">Select Build Image</string>
+    <string name="change_build_image">Change Build Image</string>
+
+    <string name="vigorConcat">Vigor: %1$s</string>
+    <string name="levelConcat">Level:\n %1$s</string>
 </resources>

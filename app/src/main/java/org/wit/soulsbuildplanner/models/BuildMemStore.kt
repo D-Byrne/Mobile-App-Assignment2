@@ -39,6 +39,7 @@ class BuildMemStore: BuildStore, AnkoLogger {
             foundBuild.level = build.level
             foundBuild.nextLevel = build.nextLevel
             foundBuild.totalSouls = build.totalSouls
+            foundBuild.image = build.image
         }
     }
 
