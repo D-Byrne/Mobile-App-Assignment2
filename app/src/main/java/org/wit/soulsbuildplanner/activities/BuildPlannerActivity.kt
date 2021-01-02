@@ -1,5 +1,6 @@
 package org.wit.soulsbuildplanner.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -9,14 +10,18 @@ import org.jetbrains.anko.info
 import kotlinx.android.synthetic.main.activity_build_planner.*
 import org.jetbrains.anko.toast
 import org.wit.soulsbuildplanner.R
+import org.wit.soulsbuildplanner.helpers.readImage
+import org.wit.soulsbuildplanner.helpers.readImageFromPath
+import org.wit.soulsbuildplanner.helpers.showImagePicker
 import org.wit.soulsbuildplanner.main.MainApp
 import org.wit.soulsbuildplanner.models.BuildModel
 
 class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
 
     var build = BuildModel()
-    //val builds = ArrayList<BuildModel>()
     lateinit var app: MainApp
+    var edit = false
+    val IMAGE_REQUEST = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +32,10 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
 
         app = application as MainApp
 
-        var edit = false
+
+        chooseImage.setOnClickListener {
+            info("Select Image")
+        }
 
         if(intent.hasExtra("build_edit")) {
             edit = true
@@ -44,6 +52,7 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
             buildLuck.setText(build.luck.toString())
 
             btnAdd.setText(R.string.save_build)
+            buildImage.setImageBitmap(readImageFromPath(this, build.image))
         }
 
         btnAdd.setOnClickListener(){
@@ -75,7 +84,23 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
             finish()
         }
 
+        chooseImage.setOnClickListener {
+            showImagePicker(this, IMAGE_REQUEST)
+        }
 
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when(requestCode){
+            IMAGE_REQUEST -> {
+                if(data != null){
+                    build.image = data.getData().toString()
+                    buildImage.setImageBitmap(readImage(this, resultCode, data))
+                }
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean{

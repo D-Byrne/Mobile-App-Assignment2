@@ -17,5 +17,6 @@ data class BuildModel(var id: Long = 0,
                       var luck: Int =0,
                       var level: Int = 0,
                       var nextLevel: Int = 0,
-                      var totalSouls: Long = 0
+                      var totalSouls: Long = 0,
+                      var image: String = ""
 ) : Parcelable
