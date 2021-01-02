@@ -27,6 +27,20 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
 
         app = application as MainApp
 
+        if(intent.hasExtra("build_edit")) {
+            build = intent.extras?.getParcelable<BuildModel>("build_edit")!!
+            buildTitle.setText(build.title)
+            buildVigor.setText(build.vigor.toString())
+            buildAttunement.setText(build.attunement.toString())
+            buildEndurance.setText(build.endurance.toString())
+            buildVitality.setText(build.vitality.toString())
+            buildStrength.setText(build.strength.toString())
+            buildDexterity.setText(build.dexterity.toString())
+            buildIntelligence.setText(build.intelligence.toString())
+            buildFaith.setText(build.faith.toString())
+            buildLuck.setText(build.luck.toString())
+        }
+
         btnAdd.setOnClickListener(){
             build.title = buildTitle.text.toString()
             build.vigor = buildVigor.text.toString().toInt()
@@ -43,11 +57,8 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
             build.totalSouls = totalSouls(build.level)
 
             if(build.title.isNotEmpty()) {
-                app.builds.add(build.copy())
+                app.builds.create(build.copy())
                 info { "Add Button Pressed: ${build}" }
-                for(i in app.builds.indices){
-                    info("Build[$i]:${app.builds[i]}")
-                }
                 setResult(AppCompatActivity.RESULT_OK)
                 finish()
             }

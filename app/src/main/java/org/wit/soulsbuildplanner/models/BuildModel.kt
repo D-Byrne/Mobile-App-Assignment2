@@ -1,7 +1,9 @@
 package org.wit.soulsbuildplanner.models
 
-import kotlin.math.round
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class BuildModel(var title: String = "",
                       var vigor: Int = 0,
                       var attunement: Int = 0,
@@ -15,5 +17,4 @@ data class BuildModel(var title: String = "",
                       var level: Int = 0,
                       var nextLevel: Int = 0,
                       var totalSouls: Long = 0
-) {
-}
+) : Parcelable

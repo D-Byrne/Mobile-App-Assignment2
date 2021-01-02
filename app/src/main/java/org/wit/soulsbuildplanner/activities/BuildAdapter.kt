@@ -8,7 +8,11 @@ import kotlinx.android.synthetic.main.card_build.view.*
 import org.wit.soulsbuildplanner.R
 import org.wit.soulsbuildplanner.models.BuildModel
 
-class BuildAdapter constructor(private var builds: List<BuildModel>) :
+interface BuildListener{
+    fun onBuildClick(build: BuildModel)
+}
+
+class BuildAdapter constructor(private var builds: List<BuildModel>, private val listener: BuildListener) :
         RecyclerView.Adapter<BuildAdapter.MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
@@ -17,7 +21,7 @@ class BuildAdapter constructor(private var builds: List<BuildModel>) :
 
     override fun onBindViewHolder(holder: MainHolder, position: Int){
         val build = builds[holder.adapterPosition]
-        holder.bind(build)
+        holder.bind(build, listener)
     }
 
 
@@ -25,7 +29,7 @@ class BuildAdapter constructor(private var builds: List<BuildModel>) :
 
     class MainHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(build: BuildModel) {
+        fun bind(build: BuildModel, listener: BuildListener) {
             itemView.buildTitle.text = build.title
             itemView.vigor.text = "Vigor: " + build.vigor.toString()
             itemView.attunement.text = "Attunement: " +build.attunement.toString()
@@ -39,6 +43,8 @@ class BuildAdapter constructor(private var builds: List<BuildModel>) :
             itemView.level.text = build.level.toString()
             itemView.nextLevel.text = build.nextLevel.toString()
             itemView.totalSouls.text = build.totalSouls.toString()
+
+            itemView.setOnClickListener { listener.onBuildClick(build) }
 
         }
     }

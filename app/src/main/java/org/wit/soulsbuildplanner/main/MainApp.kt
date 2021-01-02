@@ -3,12 +3,13 @@ package org.wit.soulsbuildplanner.main
 import android.app.Application
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.wit.soulsbuildplanner.models.BuildMemStore
 import org.wit.soulsbuildplanner.models.BuildModel
 
 class MainApp: Application(), AnkoLogger {
 
-    val builds = ArrayList<BuildModel>()
-
+    //val builds = ArrayList<BuildModel>()
+    val builds = BuildMemStore()
 
     override fun onCreate(){
         super.onCreate()

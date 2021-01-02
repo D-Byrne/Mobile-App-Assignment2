@@ -7,12 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_build_list.*
 import kotlinx.android.synthetic.main.card_build.view.*
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
 import org.wit.soulsbuildplanner.R
 import org.wit.soulsbuildplanner.main.MainApp
 import org.wit.soulsbuildplanner.models.BuildModel
 
-class BuildListActivity : AppCompatActivity() {
+class BuildListActivity : AppCompatActivity(), BuildListener {
 
     lateinit var app: MainApp
 
@@ -26,7 +27,7 @@ class BuildListActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = BuildAdapter(app.builds)
+        recyclerView.adapter = BuildAdapter(app.builds.findAll(), this)
 
     }
 
@@ -40,6 +41,10 @@ class BuildListActivity : AppCompatActivity() {
             R.id.item_add -> startActivityForResult<BuildPlannerActivity>(0)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBuildClick(build: BuildModel) {
+        startActivityForResult(intentFor<BuildPlannerActivity>().putExtra("build_edit", build), 0)
     }
 
 }
