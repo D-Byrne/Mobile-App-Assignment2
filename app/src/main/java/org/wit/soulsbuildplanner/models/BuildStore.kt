@@ -4,4 +4,5 @@ interface BuildStore {
     fun findAll(): List<BuildModel>
     fun create(build: BuildModel)
     fun update (build: BuildModel)
+    fun delete(build: BuildModel)
 }

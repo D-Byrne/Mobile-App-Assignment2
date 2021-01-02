@@ -43,6 +43,10 @@ class BuildMemStore: BuildStore, AnkoLogger {
         }
     }
 
+    override fun delete(build: BuildModel){
+        builds.remove(build)
+    }
+
     fun logAll(){
         builds.forEach{ info("${it}")}
     }

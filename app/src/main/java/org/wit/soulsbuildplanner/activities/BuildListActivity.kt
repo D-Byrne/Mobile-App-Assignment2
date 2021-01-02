@@ -28,12 +28,13 @@ class BuildListActivity : AppCompatActivity(), BuildListener {
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = BuildAdapter(app.builds.findAll(), this)
+        //recyclerView.adapter = BuildAdapter(app.builds.findAll(), this)
+        loadBuilds()
 
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        recyclerView.adapter?.notifyDataSetChanged()
+        loadBuilds()
         super.onActivityResult(requestCode, resultCode, data)
     }
 
@@ -51,6 +52,15 @@ class BuildListActivity : AppCompatActivity(), BuildListener {
 
     override fun onBuildClick(build: BuildModel) {
         startActivityForResult(intentFor<BuildPlannerActivity>().putExtra("build_edit", build), 0)
+    }
+
+    private fun loadBuilds(){
+        showBuilds(app.builds.findAll())
+    }
+
+    fun showBuilds(builds: List<BuildModel>){
+        recyclerView.adapter = BuildAdapter(builds, this)
+        recyclerView.adapter?.notifyDataSetChanged()
     }
 
 }
