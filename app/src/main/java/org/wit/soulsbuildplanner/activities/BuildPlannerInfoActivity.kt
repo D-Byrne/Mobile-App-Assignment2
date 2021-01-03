@@ -3,6 +3,7 @@ package org.wit.soulsbuildplanner.activities
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_build_info.*
 import kotlinx.android.synthetic.main.activity_build_list.*
@@ -25,6 +26,9 @@ class BuildPlannerInfoActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(true)
         //toolbar.setTitle("No. of Builds: " + app.builds.findAll().size)
         toolbarAdd.setTitle("Info")
+
+        val textView: TextView = findViewById(R.id.buildNumber)
+        textView.setText(getString(R.string.buildNumConcat, app.builds.findAll().size))
 
 
 

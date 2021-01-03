@@ -31,6 +31,7 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
         toolbarAdd.title = title
         setSupportActionBar(toolbarAdd)
 
+        toolbarAdd.setTitle("Create Build")
         app = application as MainApp
 
 
@@ -40,6 +41,8 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
 
         if(intent.hasExtra("build_edit")) {
             edit = true
+            toolbarAdd.setTitle("Edit Build")
+
             build = intent.extras?.getParcelable<BuildModel>("build_edit")!!
             buildTitle.setText(build.title)
             buildVigor.setText(build.vigor.toString())

@@ -19,8 +19,11 @@
     <string name="select_build_image">Select Build Image</string>
     <string name="change_build_image">Change Build Image</string>
 
-    <string name="vigorConcat">Vigor: %1$s</string>
+    <string name="buildNumConcat">No. of Builds: %1$d</string>
     <string name="levelConcat">Level:\n %1$s</string>
     <string name="menu_deleteBuild">Delete</string>
     <string name="menu_info">Info</string>
+    <string name="buildNumberDetails">No. of Builds:</string>
+    <string name="aboutAppTitle"><b><u>About App</u></b></string>
+    <string name="aboutAppDescription">The app is a character build planner for the action role-playing game Dark Souls. It allows the user to create a build                                                   consisting of a build title and 9 different values representing character stats present in the game. After entering these values 3 additional details are added to the build. The build level, which is the sum of each stat. The total souls required shows how many souls are needed to achieve the build level. The next level stat shows how many souls willl be required to advance to the next level.</string>
 </resources>
