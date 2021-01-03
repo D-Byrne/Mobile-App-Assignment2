@@ -12,6 +12,8 @@
         android:name=".main.MainApp">
         <activity android:name=".activities.BuildPlannerActivity">
         </activity>
+        <activity android:name=".activities.BuildPlannerInfoActivity">
+        </activity>
         <activity android:name=".activities.BuildListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

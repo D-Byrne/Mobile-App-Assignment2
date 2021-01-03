@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import kotlinx.android.synthetic.main.activity_build_list.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import kotlinx.android.synthetic.main.activity_build_planner.*
@@ -137,7 +138,6 @@ class BuildPlannerActivity : AppCompatActivity(), AnkoLogger {
         for (i in 1..lvl){
             totSouls += calcNextLevel(totSouls)
         }
-
         return totSouls.toLong()
     }
 }

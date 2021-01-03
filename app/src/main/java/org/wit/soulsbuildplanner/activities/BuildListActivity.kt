@@ -6,7 +6,10 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_build_info.*
 import kotlinx.android.synthetic.main.activity_build_list.*
+import kotlinx.android.synthetic.main.activity_build_planner.*
+import kotlinx.android.synthetic.main.activity_build_planner.toolbarAdd
 import kotlinx.android.synthetic.main.card_build.view.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
@@ -23,12 +26,13 @@ class BuildListActivity : AppCompatActivity(), BuildListener {
         setContentView(R.layout.activity_build_list)
         app = application as MainApp
 
+
         toolbar.title = title
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        //recyclerView.adapter = BuildAdapter(app.builds.findAll(), this)
         loadBuilds()
 
     }
@@ -45,7 +49,8 @@ class BuildListActivity : AppCompatActivity(), BuildListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.item_add -> startActivityForResult<BuildPlannerActivity>(0)
+            R.id.item_add -> {startActivityForResult<BuildPlannerActivity>(0)}
+            R.id.item_info -> {startActivityForResult<BuildPlannerInfoActivity>(0)}
         }
         return super.onOptionsItemSelected(item)
     }

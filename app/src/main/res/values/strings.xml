@@ -22,4 +22,5 @@
     <string name="vigorConcat">Vigor: %1$s</string>
     <string name="levelConcat">Level:\n %1$s</string>
     <string name="menu_deleteBuild">Delete</string>
+    <string name="menu_info">Info</string>
 </resources>
